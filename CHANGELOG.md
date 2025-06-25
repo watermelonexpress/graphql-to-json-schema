@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.2](https://github.com/watermelonexpress/graphql-to-json-schema/compare/v0.10.1...v0.10.2) (2025-06-24)
+
+### Bug Fixes
+
+* Update package dependencies
+* Update node version from 14.1 -> 14.21
+
 ## [0.10.1](https://github.com/wittydeveloper/graphql-to-json-schema/compare/v0.10.0...v0.10.1) (2023-06-20)
 
 ## [0.10.0](https://github.com/wittydeveloper/graphql-to-json-schema/compare/v0.9.1...v0.10.0) (2023-02-01)
