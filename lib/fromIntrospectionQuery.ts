@@ -1,5 +1,5 @@
 import { IntrospectionQuery, IntrospectionType } from 'graphql'
-import { JSONSchema6 } from 'json-schema'
+import { BpJSONSchema6 } from './BpJSONSchema6'
 import { includes, partition, reduce } from 'lodash'
 import { introspectionTypeReducer, JSONSchema6Acc } from './reducer'
 import {
@@ -11,7 +11,7 @@ import {
 import type { IDTypeMapping as IDTypeMappingType } from './types'
 
 // FIXME: finish this type
-export interface GraphQLJSONSchema6 extends JSONSchema6 {
+export interface GraphQLJSONSchema6 extends BpJSONSchema6 {
   properties: {
     Query: JSONSchema6Acc
     Mutation: JSONSchema6Acc
@@ -28,7 +28,7 @@ export interface FromIntrospectionQueryOptions {
 export const fromIntrospectionQuery = (
   introspection: IntrospectionQuery,
   opts?: FromIntrospectionQueryOptions
-): JSONSchema6 => {
+): BpJSONSchema6 => {
   const options = {
     // Defaults
     ignoreInternals: true,
