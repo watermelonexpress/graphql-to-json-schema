@@ -142,7 +142,9 @@ const options = { nullableArrayItems: true }
               required: [ 'id' ]
             }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         todos: {
           description: 'Returns a list (or null) that can contain null values',
@@ -166,7 +168,9 @@ const options = { nullableArrayItems: true }
               required: [ 'ids' ]
             }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         }
       },
       required: []
@@ -185,7 +189,9 @@ const options = { nullableArrayItems: true }
               required: [ 'todo' ]
             }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         update_todo: {
           description: 'A Mutation with 2 required arguments',
@@ -201,7 +207,9 @@ const options = { nullableArrayItems: true }
               required: [ 'id', 'data' ]
             }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         update_todos: {
           description: 'Returns a list (or null) that can contain null values',
@@ -225,7 +233,9 @@ const options = { nullableArrayItems: true }
               required: [ 'ids', 'data' ]
             }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         }
       },
       required: []
@@ -241,7 +251,9 @@ const options = { nullableArrayItems: true }
             return: { '$ref': '#/definitions/ID' },
             arguments: { type: 'object', properties: {}, required: [] }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         name: {
           type: 'object',
@@ -249,7 +261,9 @@ const options = { nullableArrayItems: true }
             return: { '$ref': '#/definitions/String' },
             arguments: { type: 'object', properties: {}, required: [] }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         completed: {
           type: 'object',
@@ -257,7 +271,9 @@ const options = { nullableArrayItems: true }
             return: { '$ref': '#/definitions/Boolean' },
             arguments: { type: 'object', properties: {}, required: [] }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         color: {
           type: 'object',
@@ -265,7 +281,9 @@ const options = { nullableArrayItems: true }
             return: { '$ref': '#/definitions/Color' },
             arguments: { type: 'object', properties: {}, required: [] }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         colors: {
           description: 'A field that requires an argument',
@@ -283,7 +301,9 @@ const options = { nullableArrayItems: true }
               required: [ 'filter' ]
             }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         }
       },
       required: [ 'id', 'name', 'colors' ]
@@ -302,7 +322,9 @@ const options = { nullableArrayItems: true }
             return: { '$ref': '#/definitions/ID' },
             arguments: { type: 'object', properties: {}, required: [] }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         },
         name: {
           type: 'object',
@@ -310,7 +332,9 @@ const options = { nullableArrayItems: true }
             return: { '$ref': '#/definitions/String' },
             arguments: { type: 'object', properties: {}, required: [] }
           },
-          required: []
+          required: [],
+          isDeprecated: false,
+          deprecationReason: null
         }
       },
       required: [ 'id', 'name' ]
