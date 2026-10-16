@@ -5,7 +5,7 @@ import {
   IntrospectionScalarType,
   IntrospectionType,
 } from 'graphql'
-import { JSONSchema6 } from 'json-schema'
+import { BpJSONSchema6 } from './BpJSONSchema6'
 import { filter, map, MemoListIterator, reduce } from 'lodash'
 import {
   isIntrospectionEnumType,
@@ -26,8 +26,6 @@ import type {
   GraphQLTypeNames,
   IDTypeMapping as IDTypeMappingType,
 } from './types'
-
-type BpJSONSchema6 = JSONSchema6 & { isDeprecated?: boolean, deprecationReason?: string | null }
 
 export type JSONSchema6Acc = {
   [k: string]: BpJSONSchema6

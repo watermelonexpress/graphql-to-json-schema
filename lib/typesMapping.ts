@@ -6,7 +6,8 @@ import {
   IntrospectionOutputTypeRef,
   IntrospectionTypeRef,
 } from 'graphql'
-import { JSONSchema6, JSONSchema6TypeName } from 'json-schema'
+import { JSONSchema6TypeName } from 'json-schema'
+import { BpJSONSchema6 } from './BpJSONSchema6'
 import { includes } from 'lodash'
 import {
   SUPPORTED_KINDS,
@@ -60,7 +61,7 @@ export type GraphqlToJSONTypeOptions = {
 export const graphqlToJSONType = (
   k: GraphqlToJSONTypeArg,
   options: GraphqlToJSONTypeOptions = {}
-): JSONSchema6 => {
+): BpJSONSchema6 => {
   if (isIntrospectionListTypeRef(k)) {
     return {
       type: 'array',
@@ -75,7 +76,7 @@ export const graphqlToJSONType = (
 
     const { isArray, isNonNull, nullableArrayItems } = options
 
-    const jsonType = {} as JSONSchema6
+    const jsonType = {} as BpJSONSchema6
 
     if (includes(SUPPORTED_KINDS, k.kind)) {
       jsonType.$ref = `#/definitions/${name}`

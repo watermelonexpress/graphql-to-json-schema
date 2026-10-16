@@ -5,7 +5,7 @@ import {
   IntrospectionQuery,
   getIntrospectionQuery,
 } from 'graphql'
-import { JSONSchema6 } from 'json-schema'
+import { BpJSONSchema6 } from './lib/BpJSONSchema6'
 
 import { isEqual, cloneDeepWith } from 'lodash'
 
@@ -133,9 +133,9 @@ export const getTodoSchemaIntrospection = (): GetTodoSchemaIntrospectionResult =
   }
 }
 
-export const todoSchemaAsJsonSchema: JSONSchema6 = generateBaseSchema()
+export const todoSchemaAsJsonSchema: BpJSONSchema6 = generateBaseSchema()
 
-export const todoSchemaAsJsonSchemaWithoutNullableArrayItems: JSONSchema6 = cloneDeepWith(
+export const todoSchemaAsJsonSchemaWithoutNullableArrayItems: BpJSONSchema6 = cloneDeepWith(
   generateBaseSchema(),
   (value, key, object, stack) => {
     // Convert the new way back to the old way
@@ -150,7 +150,7 @@ export const todoSchemaAsJsonSchemaWithoutNullableArrayItems: JSONSchema6 = clon
   }
 )
 
-export const todoSchemaAsJsonSchemaWithIdTypeNumber: JSONSchema6 = cloneDeepWith(
+export const todoSchemaAsJsonSchemaWithIdTypeNumber: BpJSONSchema6 = cloneDeepWith(
   generateBaseSchema(),
   (value, key, object, stack) => {
     if (key === 'type' && object?.title === 'ID') {
@@ -159,7 +159,7 @@ export const todoSchemaAsJsonSchemaWithIdTypeNumber: JSONSchema6 = cloneDeepWith
   }
 )
 
-export const todoSchemaAsJsonSchemaWithIdTypeStringOrNumber: JSONSchema6 = cloneDeepWith(
+export const todoSchemaAsJsonSchemaWithIdTypeStringOrNumber: BpJSONSchema6 = cloneDeepWith(
   generateBaseSchema(),
   (value, key, object, stack) => {
     if (key === 'type' && object?.title === 'ID') {
@@ -176,6 +176,9 @@ function generateBaseSchema() {
         type: 'object',
         properties: {
           todo: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -283,6 +286,9 @@ function generateBaseSchema() {
             required: [],
           },
           todos: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -298,6 +304,9 @@ function generateBaseSchema() {
             required: [],
           },
           todoUnions: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -318,6 +327,9 @@ function generateBaseSchema() {
             required: [],
           },
           node: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -342,9 +354,13 @@ function generateBaseSchema() {
         required: [],
       },
       Mutation: {
+        description: undefined,
         type: 'object',
         properties: {
           update_todo: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -362,6 +378,9 @@ function generateBaseSchema() {
             required: [],
           },
           create_todo: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -378,6 +397,9 @@ function generateBaseSchema() {
             required: [],
           },
           create_todo_union: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               arguments: {
@@ -422,7 +444,9 @@ function generateBaseSchema() {
         description: 'A ToDo Object',
         properties: {
           id: {
+            deprecationReason: null,
             description: 'A unique identifier',
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: { $ref: '#/definitions/String' },
@@ -431,6 +455,9 @@ function generateBaseSchema() {
             required: [],
           },
           name: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: { $ref: '#/definitions/String' },
@@ -439,6 +466,9 @@ function generateBaseSchema() {
             required: [],
           },
           completed: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: { $ref: '#/definitions/Boolean' },
@@ -447,6 +477,9 @@ function generateBaseSchema() {
             required: [],
           },
           color: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: { $ref: '#/definitions/Color' },
@@ -455,8 +488,10 @@ function generateBaseSchema() {
             required: [],
           },
           requiredColors: {
+            deprecationReason: null,
             description:
               'A required list containing colors that cannot contain nulls',
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: {
@@ -468,8 +503,10 @@ function generateBaseSchema() {
             required: [],
           },
           optionalColors: {
+            deprecationReason: null,
             description:
               'A non-required list containing colors that cannot contain nulls',
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: {
@@ -481,6 +518,9 @@ function generateBaseSchema() {
             required: [],
           },
           fieldWithOptionalArgument: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: {
@@ -501,6 +541,9 @@ function generateBaseSchema() {
             required: [],
           },
           fieldWithRequiredArgument: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: {
@@ -521,6 +564,9 @@ function generateBaseSchema() {
             required: [],
           },
           nullableFieldThatReturnsListOfNonNullStrings: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: {
@@ -566,6 +612,9 @@ function generateBaseSchema() {
             required: [],
           },
           nullableFieldThatReturnsListOfNullableStrings: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: {
@@ -587,6 +636,9 @@ function generateBaseSchema() {
         properties: {
           id: {
             type: 'object',
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             properties: {
               return: { $ref: '#/definitions/ID' },
               arguments: { type: 'object', properties: {}, required: [] },
@@ -594,6 +646,9 @@ function generateBaseSchema() {
             required: [],
           },
           name: {
+            deprecationReason: null,
+            description: undefined,
+            isDeprecated: false,
             type: 'object',
             properties: {
               return: { $ref: '#/definitions/String' },
@@ -656,7 +711,9 @@ function generateBaseSchema() {
         properties: {
           id: {
             type: 'object',
+            deprecationReason: null,
             description: 'A unique identifier',
+            isDeprecated: false,
             properties: {
               return: { $ref: '#/definitions/String' },
               arguments: { type: 'object', properties: {}, required: [] },
@@ -667,5 +724,5 @@ function generateBaseSchema() {
         required: ['id'],
       },
     },
-  } as JSONSchema6
+  } as BpJSONSchema6
 }
