@@ -40,7 +40,9 @@ describe('GraphQL to JSON Schema', () => {
       idTypeMapping: 'number' as IDTypeMappingType,
     }
     const result = fromIntrospectionQuery(introspection, options)
-    expect(result).toEqual(<BpJSONSchema6>todoSchemaAsJsonSchemaWithIdTypeNumber)
+    expect(result).toEqual(
+      <BpJSONSchema6>todoSchemaAsJsonSchemaWithIdTypeNumber
+    )
     const validator = new ajv()
     validator.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
     expect(validator.validateSchema(result)).toBe(true)

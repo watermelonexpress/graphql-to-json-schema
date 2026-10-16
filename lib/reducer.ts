@@ -92,7 +92,7 @@ export const introspectionFieldReducerGenerator: (
         },
         required: [],
         isDeprecated: curr.isDeprecated,
-        deprecationReason: curr.deprecationReason
+        deprecationReason: curr.deprecationReason,
       }
     } else if (isIntrospectionInputValue(curr)) {
       const returnType = isNonNullIntrospectionType(curr.type)
